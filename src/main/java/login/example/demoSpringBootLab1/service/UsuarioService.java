@@ -25,6 +25,7 @@ public class UsuarioService {
     private final PasswordEncoder passwordEncoder;  // <--- aquí
     private final LocalidadRepository localidadRepository;
     private final EspecialidadRepository especialidadRepository;
+    
 
 
     @Transactional
