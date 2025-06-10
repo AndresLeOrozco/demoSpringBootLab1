@@ -25,7 +25,7 @@ public class UsuarioService {
     private final PasswordEncoder passwordEncoder;  // <--- aquí
     private final LocalidadRepository localidadRepository;
     private final EspecialidadRepository especialidadRepository;
-    
+
 
 
     @Transactional
@@ -34,7 +34,7 @@ public class UsuarioService {
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
         // Forzar la carga de la relación lazy
-        usuario.getPerfil().getPermisosperfils().size(); // Esto carga la lista
+        usuario.getPerfil().getPermisosperfils().forEach(p -> p.getPermiso().getPermisosNombre()); // Esto carga la lista
 
 
         return usuario;
